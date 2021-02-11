@@ -4,7 +4,7 @@ async function countryData() {
         //     "https://restcountries.eu/rest/v2/name/belgium"
         // );
         const responseCountry = await axios.get (
-            "https://restcountries.eu/rest/v2/name/aruba?fullText=true"
+            "https://restcountries.eu/rest/v2/name/tuvalu?fullText=true"
         );
 
         // console.log(responseCountry);
@@ -12,7 +12,7 @@ async function countryData() {
         console.log("Valuta?", infoCountry);
         console.log("VALUTA country", infoCountry.currencies);
         // 2 ****
-        const displayCountryInfo = `${infoCountry.name} is situated in ${infoCountry.subregion}. It has a population of ${infoCountry.population} million people.`;
+        const displayCountryInfo = `${infoCountry.name} is situated in ${infoCountry.subregion}. It has a population of ${infoCountry.population} people.`;
         console.log(displayCountryInfo);
 
         // 3 ***
@@ -49,10 +49,17 @@ searchButton.addEventListener("click", countryData);
                     // console.log("CURRENCY?", currency.name);
                     const oneValuta = currency.name;
                     // console.log("In EURO?", oneValuta);
+                    const resultValuta = `and you can pay with ${oneValuta}'s`;
                     allCurrencies += oneValuta;
-                    console.log(`and you can pay with ${allCurrencies}'s`);
+                    console.log(resultValuta);
                 }
                 // [] 2 valuta's => you can pay with {}'s and {}'s
+                else if(currencies.length === 2) {
+                    const twoValutas = currency.name;
+                    const resultTwoValutas = `and you can pay with ${currency.name}'s and ${currency.name}'s`;
+                    allCurrencies += resultTwoValutas;
+                    console.log(resultTwoValutas);
+                }
 
             }
 
