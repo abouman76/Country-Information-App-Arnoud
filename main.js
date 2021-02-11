@@ -1,21 +1,27 @@
 async function countryData() {
     try {
-        const responseCountry = await axios.get(
-            "https://restcountries.eu/rest/v2/name/belgium"
+        // const responseCountry = await axios.get(
+        //     "https://restcountries.eu/rest/v2/name/belgium"
+        // );
+        const responseCountry = await axios.get (
+            "https://restcountries.eu/rest/v2/name/aruba?fullText=true"
         );
+
         // console.log(responseCountry);
-        const infoBelgium = responseCountry.data[0];
-        console.log("BELGIE?", infoBelgium);
+        const infoCountry = responseCountry.data[0];
+        console.log("Valuta?", infoCountry);
+        console.log("VALUTA country", infoCountry.currencies);
         // 2 ****
-        const displayCountryInfo = `${infoBelgium.name} is situated in ${infoBelgium.subregion}. It has a population of ${infoBelgium.population} million people.`;
+        const displayCountryInfo = `${infoCountry.name} is situated in ${infoCountry.subregion}. It has a population of ${infoCountry.population} million people.`;
         console.log(displayCountryInfo);
 
         // 3 ***
-        const capital = `${infoBelgium.capital}`
+        const capital = `The capital is ${infoCountry.capital}`
         console.log(capital);
 
-
-
+        // 4.1 ******
+        const countryCurrency = currenciesCountry(infoCountry.currencies)
+        console.log(countryCurrency);
     }
     catch (error) {
         console.log(error);
@@ -32,3 +38,51 @@ searchButton.addEventListener("click", countryData);
 // `[country-naam] is situated in [subarea-name]. It has a population of [amount] people.`
 // const displayCountryInfo = `${infoBelgium.name}`;
 // console.log(displayCountryInfo);
+
+        function currenciesCountry(currencies) {
+            // console.log("Valuta?", currencies);
+            let allCurrencies = "";
+            for (let i = 0; i < currencies.length ; i++) {
+                const currency = currencies[i];
+                // console.log("INDEX", currency);
+                if (currencies.length === 1) {
+                    // console.log("CURRENCY?", currency.name);
+                    const oneValuta = currency.name;
+                    // console.log("In EURO?", oneValuta);
+                    allCurrencies += oneValuta;
+                    console.log(`and you can pay with ${allCurrencies}'s`);
+                }
+                // [] 2 valuta's => you can pay with {}'s and {}'s
+
+            }
+
+            return allCurrencies;
+
+
+            // const formattedSizeWithPike = `${currentScreenSize} inches (${Math.round(currentScreenSize * 2.54)} cm) |`;
+            // console.log(formattedSizeWithPike);
+            // allSizes = allSizes + formattedSizeWithPike;
+            // console.log(allSizes);
+
+            // const lastEntrySize = screenSize.availableSizes.length -1;
+            // console.log("Gelijk aan:" , lastEntrySize, screenSize.availableSizes.length -1 === i);
+
+            //if(screenSize.availableSizes.length -1 === i) {
+            // console.log("Last:" )
+            // const formattedSize = `${currentScreenSize} inches (${Math.round(currentScreenSize * 2.54)} cm)`;
+            // console.log(formattedSize);
+            //  allSizes = allSizes + formattedSize;
+
+            // } else {
+            // console.log("Pike toevoegen?");
+            //  const formattedSizeWithPike = `${currentScreenSize} inches (${Math.round(currentScreenSize * 2.54)} cm) | `;
+            // console.log(formattedSizeWithPike);
+            //  allSizes = allSizes + formattedSizeWithPike;
+            //  }
+            //   }
+            // return allSizes;
+
+
+// console.log(screenSizesTV(inventory[1]));
+        }
+
