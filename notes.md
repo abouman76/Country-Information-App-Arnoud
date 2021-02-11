@@ -5,8 +5,8 @@
 3. [x] NPM init.
 4. [x] git init (zorg wel voor een git repository)
 5. [x] .gitignore maken.
-6. [ ] AXIOS installeren. _(library)_
-7. [ ] AXIOS script linken.
+6. [x] AXIOS installeren. _(library)_
+7. [x] AXIOS script linken.
 8. [ ] Een async function maken en **aanroepen**!
 9. [ ] Request maken met AXIOS.
 10. [ ] Afwachten tot de data er is.
