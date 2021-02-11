@@ -3,12 +3,17 @@ async function countryData() {
         const responseCountry = await axios.get(
             "https://restcountries.eu/rest/v2/name/belgium"
         );
-        // console.log(resultCountry);
-        const infoBelgium = responseCountry.data;
+        // console.log(responseCountry);
+        const infoBelgium = responseCountry.data[0];
         console.log("BELGIE?", infoBelgium);
         // 2 ****
         const displayCountryInfo = `${infoBelgium.name} is situated in ${infoBelgium.subregion}. It has a population of ${infoBelgium.population} million people.`;
         console.log(displayCountryInfo);
+
+        // 3 ***
+        const capital = `${infoBelgium.capital}`
+        console.log(capital);
+
 
 
     }
