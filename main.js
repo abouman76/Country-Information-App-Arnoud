@@ -1,9 +1,16 @@
 async function countryData() {
     try {
-        const resultCountry = await axios.get("https://restcountries.eu/rest/v2/name/belgium");
+        const responseCountry = await axios.get(
+            "https://restcountries.eu/rest/v2/name/belgium"
+        );
         // console.log(resultCountry);
-        const infoBelgium = resultCountry.data[0];
-        console.log(infoBelgium);
+        const infoBelgium = responseCountry.data;
+        console.log("BELGIE?", infoBelgium);
+        // 2 ****
+        const displayCountryInfo = `${infoBelgium.name} is situated in ${infoBelgium.subregion}. It has a population of ${infoBelgium.population} million people.`;
+        console.log(displayCountryInfo);
+
+
     }
     catch (error) {
         console.log(error);
@@ -12,10 +19,11 @@ async function countryData() {
 countryData();
 
 // 1. *************
-const clickButton = document.getElementById("search-button");
-clickButton.addEventListener("click", countryData);
+const searchButton = document.getElementById("search-button");
+searchButton.addEventListener("click", countryData);
 
 //2. ***************
 // Maak een string die het volgende logt:
 // `[country-naam] is situated in [subarea-name]. It has a population of [amount] people.`
-const
+// const displayCountryInfo = `${infoBelgium.name}`;
+// console.log(displayCountryInfo);
