@@ -7,8 +7,9 @@
 5. [x] .gitignore maken.
 6. [x] AXIOS installeren. _(library)_
 7. [x] AXIOS script linken.
-8. [ ] Een async function maken en **aanroepen**!
-9. [ ] Request maken met AXIOS.
+8. [x] Een async function maken en **aanroepen**!
+9. [x] Request maken met AXIOS.
+    - [x] Try / catch maken.
 10. [ ] Afwachten tot de data er is.
 11. [ ] Data weergeven in de DOM.
     - [ ] Lijst maken met een id.
@@ -17,3 +18,17 @@
         - [] Een li aanmaken.
         - [] textContent toevoegen.
         - [] li appenden.
+
+
+#### stappenplan voor spinner
+- [] Spinner zoeken, maken?
+- [] Wanneer spinner laten zien.
+- [] Wanneer spinner NIET meer laten zien.
+- [] Spinner toevoegen aan HTML
+    - [] Loading -> spinner laten zien. 
+    - [] CSS class maken met display block, class toevoegen.
+    - [] class toevoegen aan spinner (getElement -> setAttribute / classList.add)
+  - [] Succes / Error -> spinner weghalen.
+  - [] class toevoegen met removeAttribute.
+  - []  
+    
