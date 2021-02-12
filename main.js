@@ -11,7 +11,7 @@ async function countryData() {
         //     "https://restcountries.eu/rest/v2/name/belgium"
         // );
         const responseCountry = await axios.get (
-            "https://restcountries.eu/rest/v2/name/belgium?fullText=true" //tuvalu
+            "https://restcountries.eu/rest/v2/name/tuvalu?fullText=true" //tuvalu
         );
 
         console.log(responseCountry);
@@ -69,7 +69,7 @@ async function countryData() {
         console.log(error);
     }
 }
-countryData();
+// countryData();
 
 // VRAAG 1. *************
 const searchButton = document.getElementById("search-button");
@@ -92,7 +92,7 @@ function currenciesCountry(currencies) {
         return acc + `${currency.name}'s`;
     }
         if(index === currencies.length -1) {
-        return acc + `and ${currency.name}'s `;
+        return acc + ` and ${currency.name}'s `;
     }
 
 },"and you can pay with ");
