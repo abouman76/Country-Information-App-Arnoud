@@ -1,3 +1,7 @@
+// vraag 7
+// anker element voor vlag en textblok!!
+const displayFlagAndText = document.getElementById("display-flag-country");
+
 async function countryData() {
     try {
         // const responseCountry = await axios.get(
@@ -13,6 +17,9 @@ async function countryData() {
         //console.log("VALUTA country", infoCountry.currencies);
 
         // 2 ****
+        const countryName = `${infoCountry.name}`;
+        console.log(countryName);
+
         const displayCountryInfo = `${infoCountry.name} is situated in ${infoCountry.subregion}. It has a population of ${infoCountry.population} people.`;
         console.log(displayCountryInfo);
 
@@ -25,15 +32,25 @@ async function countryData() {
         console.log(countryCurrency);
 
         // 6 ***
-
         const countryLanguages = languagesCountry(infoCountry.languages);
         console.log(countryLanguages);
+
+        // 7 ***
+        const countryNameElement = document.createElement("H3");
+        // console.log("Wat is dit?", countryName)
+        countryNameElement.textContent = `${infoCountry.name}`;
+        displayFlagAndText.appendChild(countryNameElement);
+
+
+
+
+
     }
     catch (error) {
         console.log(error);
     }
 }
-countryData();
+// countryData();
 
 // VRAAG 1. *************
 const searchButton = document.getElementById("search-button");
@@ -53,7 +70,7 @@ function currenciesCountry(currencies) {
         // console.log("Laatste valuta", currency, index === currencies.length -1);
 
         if(index !== currencies.length -1 || currencies.length === 1){
-        return acc + `${currency.name}'s `;
+        return acc + `${currency.name}'s`;
     }
         if(index === currencies.length -1) {
         return acc + `and ${currency.name}'s `;
@@ -71,17 +88,18 @@ function languagesCountry(languages) {
 
         // 1 taal
         if(languages.length === 1 || index === 0) {
-            return acc = `${language.name}`;
+            return acc + `${language.name}`;
         } // 2 talen met "and" samenvoegen
         if(index === languages.length -1) {
             return acc + ` and ${language.name}`;
-        } // 3 talen met , tussen de entry's met uitzondering tussen de een na laatste en laatste.
+        } // 3 talen met , tussen de entry's met uitzondering van tussen de een na laatste en laatste.
         if(index !== languages.length -1 && index !== 0) {
-            return acc + `, ${language.name}`
+            return acc + `, ${language.name}`;
         }
 
-    }, "They speak ");
-
+    },"They speak ");
     return allLanguages;
 }
-// languagesCountry([{language: "NL"}, {language: "BE"}]); //
+// languagesCountry([{language: "NL"}, {language: "BE"}]);
+
+

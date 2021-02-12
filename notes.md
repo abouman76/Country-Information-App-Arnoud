@@ -31,4 +31,20 @@
   - [] Succes / Error -> spinner weghalen.
   - [] class toevoegen met removeAttribute.
   - []  
+
+### stappenplan vraag 4.
+4. Maak een functie die ongeacht het aantal currencies die in een land gebruikt worden, een string maakt. In een land kunnen één of twee currencies gebruikt worden:
+- 1 valuta: `and you can pay with [currency]'s`
+- 2 valuta's: `and you can pay with [currency]'s and [currency]'s`
+
+- [ ] Goed in de data kijken, waar zit deze info: -> loggen
+- [ ] variabele maken, en de currencies uit de data daaraan toekennen
+- [ ] functie maken -> formatCurrencies
+- [ ] aanroepen -> logje in de functie zetten om te checken
+- [ ] input: currencies, parameter(s) toevoegen, argument(en) meegeven
+- [ ] parameter loggen om te kijken of de input hebben
+- [ ] if
+- [ ] 1 currency -> `and you can pay with [currency]'s`
+- [ ] 2 currency -> `and you can pay with [currency]'s and [currency]'s`
+- [ ] return de waarde `and you can pay with [currency]'s and [currency]'s`    
     
