@@ -1,0 +1,67 @@
+/*deze is voor de H2 - Title*/
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+
+/*Deze voor de rest van de website*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 1200px;
+    /*display: flex;*/
+    /*justify-content: center;*/
+
+}
+
+#title-h2 {
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    max-width: 400px;
+}
+
+#search-container {
+    display: flex;
+    justify-content: center;
+    max-width: 350px;
+}
+
+#search-field {
+    width: 65%;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 20px;
+}
+
+#placeholder {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#search-button {
+    background-color: red;
+    width: 35%;
+    padding: 5px;
+    margin-left: 5px;
+    border-radius: 20px;
+}
+
+.button {
+    font-family: 'Montserrat', sans-serif;
+    font-width: 500;
+}
+
