@@ -68,12 +68,20 @@ function languagesCountry(languages) {
     // console.log("Functie aanroepen?", languages);
     const allLanguages = languages.reduce((acc, language, index) => {
         console.log("TALEN", language);
-        if(languages.length === 1 || index !== language.length -1) {
+        if(languages.length === 1 || index === 0) {
             return acc = `${language.name}`;
         }
-        else if()
+        if(index === languages.length -1) {
+            return acc + ` and ${language.name}`;
+        }
+        if(index !== languages.length -1 && index !== 0) {
+            return acc + `, ${language.name}`
+        }
+
+
 
     }, "They speak ");
+
     return allLanguages;
 }
-languagesCountry([{language: "NL"}, {language: "BE"}]); //
+// languagesCountry([{language: "NL"}, {language: "BE"}]); //
