@@ -9,8 +9,9 @@ async function countryData() {
 
         // console.log(responseCountry);
         const infoCountry = responseCountry.data[0];
-        console.log("Valuta?", infoCountry);
-        console.log("VALUTA country", infoCountry.currencies);
+        // console.log("Valuta?", infoCountry);
+        //console.log("VALUTA country", infoCountry.currencies);
+
         // 2 ****
         const displayCountryInfo = `${infoCountry.name} is situated in ${infoCountry.subregion}. It has a population of ${infoCountry.population} people.`;
         console.log(displayCountryInfo);
@@ -41,39 +42,10 @@ searchButton.addEventListener("click", countryData);
 
 // VRAAG 4
 
-// function currenciesCountry(currencies) {
-//     // console.log("Valuta?", currencies);
-//     let allCurrencies = "";
-//     for (let i = 0; i < currencies.length ; i++) {
-//         const currency = currencies[i];
-//         // console.log("INDEX", currency);
-//         if (currencies.length === 1) {
-//             // console.log("CURRENCY?", currency.name);
-//             const oneValuta = currency.name;
-//             // console.log("In EURO?", oneValuta);
-//             const resultValuta = `and you can pay with ${oneValuta}'s`;
-//             allCurrencies += oneValuta;
-//             console.log("One valuta?", resultValuta);
-//         }
-        //[] 2 valuta's => you can pay with {}'s and {}'s
-        // else (currencies.length === 2) {
-        //     const twoValutas = currency.name;
-        //     const resultTwoValutas = `and you can pay with ${currency.name}'s and ${currency.name}'s`;
-        //     // const resultTwoValutas = `${resultValuta} and ${twoValutas}'s`;
-        //     allCurrencies += resultTwoValutas;
-        //     console.log(resultTwoValutas);
-        // }
-   // }
-
-   // return allCurrencies;
-
-   // console.log(countryCurrency);
-
-
 function currenciesCountry(currencies) {
-    console.log("Functie aangeroepen?", currencies);
+    // console.log("Functie aangeroepen?", currencies);
     const allCurrencies = currencies.reduce((acc, currency, index) => {
-        console.log("Laatste valuta", currency, index === currencies.length -1);
+        // console.log("Laatste valuta", currency, index === currencies.length -1);
 
         if(index !== currencies.length -1 || currencies.length === 1){
         return acc + `${currency.name}'s `;
