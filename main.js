@@ -17,9 +17,6 @@ async function countryData() {
         //console.log("VALUTA country", infoCountry.currencies);
 
         // 2 ****
-        const countryName = `${infoCountry.name}`;
-        console.log(countryName);
-
         const displayCountryInfo = `${infoCountry.name} is situated in ${infoCountry.subregion}. It has a population of ${infoCountry.population} people.`;
         console.log(displayCountryInfo);
 
@@ -41,7 +38,17 @@ async function countryData() {
         countryNameElement.textContent = `${infoCountry.name}`;
         displayFlagAndText.appendChild(countryNameElement);
 
+        const countryInfoElement = document.createElement("p");
+        countryInfoElement.textContent = `${displayCountryInfo}`;
+        displayFlagAndText.appendChild(countryInfoElement);
 
+        const capitalCurrencyElement = document.createElement("p");
+        capitalCurrencyElement.textContent = `${capital} ${countryCurrency}.`;
+        displayFlagAndText.appendChild(capitalCurrencyElement);
+
+        const languageElement = document.createElement("p");
+        languageElement.textContent = `${countryLanguages}`;
+        displayFlagAndText.appendChild(languageElement);
 
 
 
