@@ -33,6 +33,15 @@ async function countryData() {
         console.log(countryLanguages);
 
         // 7 ***
+
+        // vlag
+        const flagElement = document.createElement("img");
+        // console.log("IMG-Link?", flagElement);
+        flagElement.setAttribute("src", infoCountry.flag);
+        flagElement.setAttribute("width", "50px");
+        displayFlagAndText.appendChild(flagElement);
+
+        // DOM elements met de land-informatie
         const countryNameElement = document.createElement("H3");
         // console.log("Wat is dit?", countryName)
         countryNameElement.textContent = `${infoCountry.name}`;
@@ -57,7 +66,7 @@ async function countryData() {
         console.log(error);
     }
 }
-// countryData();
+countryData();
 
 // VRAAG 1. *************
 const searchButton = document.getElementById("search-button");
