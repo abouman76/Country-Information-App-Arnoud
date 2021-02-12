@@ -17,6 +17,11 @@ body {
     align-items: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+    background-image: url("earth-one.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
 .container {
@@ -28,6 +33,7 @@ body {
 
 #title-h2 {
     font-family: 'Gochi Hand', cursive;
+    color: white;
     font-size: x-large;
     display: flex;
     justify-content: center;

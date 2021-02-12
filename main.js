@@ -120,5 +120,3 @@ function languagesCountry(languages) {
     return allLanguages;
 }
 // languagesCountry([{language: "NL"}, {language: "BE"}]);
-
-
