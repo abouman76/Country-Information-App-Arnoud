@@ -1,6 +1,9 @@
 // vraag 7
-// anker element voor vlag en textblok!!
-const displayFlagAndText = document.getElementById("display-flag-country");
+// anker element voor info textblok!!
+const displayCountryText = document.getElementById("display-flag-country");
+
+// anker element voor de vlag
+const displayFlag = document.getElementById("display-flag");
 
 async function countryData() {
     try {
@@ -39,25 +42,25 @@ async function countryData() {
         // console.log("IMG-Link?", flagElement);
         flagElement.setAttribute("src", infoCountry.flag);
         flagElement.setAttribute("width", "50px");
-        displayFlagAndText.appendChild(flagElement);
+        displayFlag.appendChild(flagElement);
 
         // DOM elements met de land-informatie
         const countryNameElement = document.createElement("H3");
         // console.log("Wat is dit?", countryName)
         countryNameElement.textContent = `${infoCountry.name}`;
-        displayFlagAndText.appendChild(countryNameElement);
+        displayCountryText.appendChild(countryNameElement);
 
         const countryInfoElement = document.createElement("p");
         countryInfoElement.textContent = `${displayCountryInfo}`;
-        displayFlagAndText.appendChild(countryInfoElement);
+        displayCountryText.appendChild(countryInfoElement);
 
         const capitalCurrencyElement = document.createElement("p");
         capitalCurrencyElement.textContent = `${capital} ${countryCurrency}.`;
-        displayFlagAndText.appendChild(capitalCurrencyElement);
+        displayCountryText.appendChild(capitalCurrencyElement);
 
         const languageElement = document.createElement("p");
         languageElement.textContent = `${countryLanguages}`;
-        displayFlagAndText.appendChild(languageElement);
+        displayCountryText.appendChild(languageElement);
 
 
 
