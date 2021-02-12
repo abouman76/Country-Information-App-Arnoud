@@ -4,10 +4,10 @@ async function countryData() {
         //     "https://restcountries.eu/rest/v2/name/belgium"
         // );
         const responseCountry = await axios.get (
-            "https://restcountries.eu/rest/v2/name/tuvalu?fullText=true" //tuvalu
+            "https://restcountries.eu/rest/v2/name/belgium?fullText=true" //tuvalu
         );
 
-        // console.log(responseCountry);
+        console.log(responseCountry);
         const infoCountry = responseCountry.data[0];
         // console.log("Valuta?", infoCountry);
         //console.log("VALUTA country", infoCountry.currencies);
@@ -20,9 +20,14 @@ async function countryData() {
         const capital = `The capital is ${infoCountry.capital}`
         console.log(capital);
 
-        // 4.1 ******
+        // 4 ******
         const countryCurrency = currenciesCountry(infoCountry.currencies)
         console.log(countryCurrency);
+
+        // 6 ***
+
+        const countryLanguages = languagesCountry(infoCountry.languages);
+        console.log(countryLanguages);
     }
     catch (error) {
         console.log(error);
@@ -58,3 +63,17 @@ function currenciesCountry(currencies) {
     return allCurrencies;
 }
 // console.log(currenciesCountry([{name: "euro"}, {name: "dollar"}]));
+
+function languagesCountry(languages) {
+    // console.log("Functie aanroepen?", languages);
+    const allLanguages = languages.reduce((acc, language, index) => {
+        console.log("TALEN", language);
+        if(languages.length === 1 || index !== language.length -1) {
+            return acc = `${language.name}`;
+        }
+        else if()
+
+    }, "They speak ");
+    return allLanguages;
+}
+languagesCountry([{language: "NL"}, {language: "BE"}]); //
