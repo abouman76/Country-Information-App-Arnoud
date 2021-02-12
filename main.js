@@ -67,18 +67,18 @@ function currenciesCountry(currencies) {
 function languagesCountry(languages) {
     // console.log("Functie aanroepen?", languages);
     const allLanguages = languages.reduce((acc, language, index) => {
-        console.log("TALEN", language);
+        // console.log("TALEN", language);
+
+        // 1 taal
         if(languages.length === 1 || index === 0) {
             return acc = `${language.name}`;
-        }
+        } // 2 talen met "and" samenvoegen
         if(index === languages.length -1) {
             return acc + ` and ${language.name}`;
-        }
+        } // 3 talen met , tussen de entry's met uitzondering tussen de een na laatste en laatste.
         if(index !== languages.length -1 && index !== 0) {
             return acc + `, ${language.name}`
         }
-
-
 
     }, "They speak ");
 
