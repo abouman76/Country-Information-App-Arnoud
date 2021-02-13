@@ -1,3 +1,12 @@
+// VRAAG 1. *************
+const searchButton = document.getElementById("search-button");
+searchButton.addEventListener("click", countryData);
+
+// VRAAG 8.
+const searchInput = document.getElementById("search-field");
+searchInput.addEventListener("keyup", handleKeyUp);
+// console.log("ELEMENT?", searchInput);
+
 // vraag 7
 // anker element voor info textblok!!
 const displayCountryText = document.getElementById("display-flag-country");
@@ -5,14 +14,25 @@ const displayCountryText = document.getElementById("display-flag-country");
 // anker element voor de vlag
 const displayFlag = document.getElementById("display-flag");
 
+// VRAAG 9 =>GLOBALE VARIABELE
+let globalInputElement = "";
+// console.log("Lege string?", globalInputElement);
+function handleKeyUp(event) {
+    globalInputElement = event.target.value;
+    if(event.key === "Enter") {
+        console.log(globalInputElement);
+        countryData();
+    }
+}
+
 async function countryData() {
     try {
         // const responseCountry = await axios.get(
         //     "https://restcountries.eu/rest/v2/name/belgium"
         // );
-        const country = "Nederland"
+        // const country = "Nederland"
         const responseCountry = await axios.get (
-            `https://restcountries.eu/rest/v2/name/${country}?fullText=true`
+            `https://restcountries.eu/rest/v2/name/${globalInputElement}?fullText=true`
         );
 
         console.log(responseCountry);
@@ -72,9 +92,7 @@ async function countryData() {
 }
 // countryData();
 
-// VRAAG 1. *************
-const searchButton = document.getElementById("search-button");
-searchButton.addEventListener("click", countryData);
+
 
 // VRAAG 2. ***************
 // Maak een string die het volgende logt:
@@ -123,9 +141,6 @@ function languagesCountry(languages) {
 // languagesCountry([{language: "NL"}, {language: "BE"}]);
 
 
-// VRAAG 8.
-const searchInput = document.getElementById("search-field");
-searchInput.addEventListener("keyup", handleKeyUp);
-console.log("ELEMENT?", searchInput);
+
 
 // VRAAG 9.
