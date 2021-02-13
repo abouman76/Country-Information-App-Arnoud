@@ -121,3 +121,11 @@ function languagesCountry(languages) {
     return allLanguages;
 }
 // languagesCountry([{language: "NL"}, {language: "BE"}]);
+
+
+// VRAAG 8.
+const searchInput = document.getElementById("search-field");
+searchInput.addEventListener("keyup", handleKeyUp);
+console.log("ELEMENT?", searchInput);
+
+// VRAAG 9.
