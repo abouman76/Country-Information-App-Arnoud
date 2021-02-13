@@ -10,8 +10,9 @@ async function countryData() {
         // const responseCountry = await axios.get(
         //     "https://restcountries.eu/rest/v2/name/belgium"
         // );
+        const country = "Nederland"
         const responseCountry = await axios.get (
-            "https://restcountries.eu/rest/v2/name/tuvalu?fullText=true" //tuvalu
+            `https://restcountries.eu/rest/v2/name/${country}?fullText=true`
         );
 
         console.log(responseCountry);
@@ -111,7 +112,7 @@ function languagesCountry(languages) {
         } // 2 talen met "and" samenvoegen
         if(index === languages.length -1) {
             return acc + ` and ${language.name}`;
-        } // 3 talen met , tussen de entry's met uitzondering van tussen de een na laatste en laatste.
+        } // 3 talen met , tussen de entry's met uitzondering van de een na laatste en laatste.
         if(index !== languages.length -1 && index !== 0) {
             return acc + `, ${language.name}`;
         }

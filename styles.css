@@ -49,6 +49,7 @@ body {
 
 #display-flag-country {
     max-width: 350px;
+    color: white;
     /*display: flex;*/
     /*justify-content: center;*/
     /*flex-direction: column;*/
