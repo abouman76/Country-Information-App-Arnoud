@@ -12,10 +12,13 @@ const displayFlag = document.getElementById("display-flag");
 // VRAAG 8.
 const searchInput = document.getElementById("search-field");
 searchInput.addEventListener("keypress", handleKeyPress);
-console.log("ELEMENT?", searchInput);
+// console.log("SEARCH ELEMENT?", searchInput);
 
 function handleKeyPress(event) {
-    console.log("KEY PRESSED?", event.code);
+    // console.log("KEY PRESSED?", event.code, event.code === "Enter");
+    if(event.code === "Enter") {
+        countryData(); // aanroepen vd functie!!
+    }
 }
 
 // // VRAAG 9 =>GLOBALE VARIABELE
@@ -30,6 +33,12 @@ function handleKeyPress(event) {
 // }
 
 async function countryData() {
+
+    const inputElement = document.getElementById("search-field");
+    // console.log("INPUT ELEMENT?", inputElement);
+    const userInput = inputElement.value;
+    // console.log("USER INPUT", userInput);
+
     // VRAAG 10
    // searchInput.value = ""; // searchInput is de variabele van vraag 8
 
@@ -39,12 +48,8 @@ async function countryData() {
     //         displayCountryText.removeChild("display-flag-country");
     //     }
 
-
     try {
-        // const responseCountry = await axios.get(
-        //     "https://restcountries.eu/rest/v2/name/belgium"
-        // );
-        const country = "Nederland";
+        const country = userInput;
         const responseCountry = await axios.get (
             `https://restcountries.eu/rest/v2/name/${country}?fullText=true`
         );
