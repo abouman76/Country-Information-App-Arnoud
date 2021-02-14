@@ -34,13 +34,15 @@ function handleKeyPress(event) {
 
 async function countryData() {
 
+    // VRAAG 9
     const inputElement = document.getElementById("search-field");
     // console.log("INPUT ELEMENT?", inputElement);
     const userInput = inputElement.value;
     // console.log("USER INPUT", userInput);
 
     // VRAAG 10
-   // searchInput.value = ""; // searchInput is de variabele van vraag 8
+   searchInput.value = ""; // searchInput is de variabele van vraag 8
+
 
     // VRAAG 11
     // const refreshInfo = document.getElementById("display-flag-country");
@@ -49,7 +51,7 @@ async function countryData() {
     //     }
 
     try {
-        const country = userInput;
+        const country = userInput; // globalInputElement
         const responseCountry = await axios.get (
             `https://restcountries.eu/rest/v2/name/${country}?fullText=true`
         );
