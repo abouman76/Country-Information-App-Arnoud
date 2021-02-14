@@ -17,20 +17,9 @@ searchInput.addEventListener("keypress", handleKeyPress);
 function handleKeyPress(event) {
     // console.log("KEY PRESSED?", event.code, event.code === "Enter");
     if(event.code === "Enter") {
-        countryData(); // aanroepen vd functie!!
+        countryData(); // aanroepen vd functie!! ==> GLOBAAL???
     }
 }
-
-// // VRAAG 9 =>GLOBALE VARIABELE
-// let globalInputElement = "";
-// // console.log("Lege string?", globalInputElement);
-// function handleKeyPress(event) {
-//     globalInputElement = event.target.value;
-//     if(event.code === "Enter") {
-//         console.log(globalInputElement);
-//         countryData();
-//     }
-// }
 
 async function countryData() {
 
@@ -43,20 +32,26 @@ async function countryData() {
     // VRAAG 10
    searchInput.value = ""; // searchInput is de variabele van vraag 8
 
-
     // VRAAG 11
-    // const refreshInfo = document.getElementById("display-flag-country");
-    //     if(refreshInfo) {
+    // const refreshSearch = document.getElementById("display-flag-country");
+    //     if(refreshSearch) {
     //         displayCountryText.removeChild("display-flag-country");
     //     }
+
+    // VRAAG 12
+    // const errorMessage = document.getElementById("error-text");
+    // console.log(errorMessage);
+    // errorMessage.textContent = "";
+    // NOG APPENDEN?
+    // displayCountryText.appendChild(errorMessage);
 
     try {
         const country = userInput; // globalInputElement
         const responseCountry = await axios.get (
             `https://restcountries.eu/rest/v2/name/${country}?fullText=true`
         );
-
         // console.log(responseCountry); // geeft de info van het opgevraagde land weer in de console.
+
         const infoCountry = responseCountry.data[0];
         // console.log("Valuta?", infoCountry);
         //console.log("VALUTA country", infoCountry.currencies);
@@ -106,7 +101,7 @@ async function countryData() {
     }
     catch (error) {
         console.log(error);
-       // errorMessage.textContent = `${globalInputElement} Geen treffer. Probeer een ander land!`;
+        // errorMessage.textContent = `${country} No hit! Try again in english.`;
     }
 }
 // countryData(); => staat bij de globalInputElement
