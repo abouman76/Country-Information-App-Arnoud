@@ -17,7 +17,7 @@ body {
     align-items: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    background-image: url("earth-one.jpg");
+    background-image: url("earth-two.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -74,13 +74,28 @@ body {
     border-radius: 20px;
 }
 
+#search-button:hover {
+    background-color: darkseagreen;
+}
+
+#search-button:active {
+    background-color: darkseagreen;
+    transform: translateY(2px); /* drukt op knop */
+}
+
 .button {
     font-family: 'Montserrat', sans-serif;
     font-width: 500;
+    cursor: pointer;
 }
+
+
+
 
 #display-flag {
     display: flex;
     justify-content: center;
     margin: 20px;
 }
+
+
