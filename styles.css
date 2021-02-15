@@ -89,13 +89,18 @@ body {
     cursor: pointer;
 }
 
-
-
-
 #display-flag {
     display: flex;
     justify-content: center;
     margin: 20px;
+}
+
+#error-text {
+    color: red;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 
