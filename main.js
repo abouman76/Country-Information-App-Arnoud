@@ -44,23 +44,12 @@ async function countryData() {
     removeChilderen(displayFlag);
     removeChilderen(displayCountryText);
 
-    // while (displayFlag.firstChild) {
-    //     displayFlag.removeChild(displayFlag.lastChild)
-    // }
-    //
-    // while (displayCountryText.firstChild) {
-    //     displayCountryText.removeChild(displayCountryText.lastChild)
-    // }
-
-    // displayFlag.innerHTML = "";
-    // displayCountryText.innerHTML = "";
-
     //VRAAG 12
     const errorMessage = document.getElementById("error-text");
-    console.log(errorMessage);
+    // console.log(errorMessage);
     errorMessage.textContent = "";
 
-    const country = userInput; // globalInputElement
+    const country = userInput; // global?
 
     try {
 
@@ -91,14 +80,12 @@ async function countryData() {
 
         // VRAAG 7 - vlag element
         const flagElement = document.createElement("img");
-        // console.log("IMG-Link?", flagElement);
         flagElement.setAttribute("src", infoCountry.flag);
         flagElement.setAttribute("width", "50px");
         displayFlag.appendChild(flagElement);
 
         // VRAAG 7 - DOM elements met de land-informatie
         const countryNameElement = document.createElement("H3");
-        // console.log("Wat is dit?", countryName)
         countryNameElement.textContent = `${infoCountry.name}`;
         displayCountryText.appendChild(countryNameElement);
 
@@ -117,18 +104,11 @@ async function countryData() {
 
     } catch (error) {
         console.log(error);
-        errorMessage.textContent = `${country} No hit! Try again in english.`;
+        errorMessage.textContent = `${country} gives no hit! Please try again in english.`;
     }
 }
-// countryData(); => staat bij de globalInputElement
+// countryData(); => wordt nu aangeroepen bij de function handleKeyPress
 
-
-
-// VRAAG 2. ***************
-// Maak een string die het volgende logt:
-// `[country-naam] is situated in [subarea-name]. It has a population of [amount] people.`
-// const displayCountryInfo = `${infoBelgium.name}`;
-// console.log(displayCountryInfo);
 
 // VRAAG 4
 
@@ -168,6 +148,6 @@ function languagesCountry(languages) {
     },"They speak ");
     return allLanguages;
 }
-// languagesCountry([{language: "NL"}, {language: "BE"}]);
+// languagesCountry([{language: "NL"}, {language: "BE"}]) => dit gebruik je bij testen zonder aanroepen functie.
 
 
