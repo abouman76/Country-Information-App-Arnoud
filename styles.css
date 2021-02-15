@@ -103,4 +103,7 @@ body {
     justify-content: center;
 }
 
+p, h3 {
+    margin: 5px;
+}
 
