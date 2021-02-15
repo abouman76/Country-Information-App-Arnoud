@@ -18,3 +18,34 @@
         - [x] Een li aanmaken.
         - [x] textContent toevoegen.
         - [x] li appenden.
+
+#### De vorige entry verwijderen zodra je een nieuwe opdracht intoetst. 
+
+Kan op verschillende manieren. In een functie die je buiten een functie zet en die je aanroept binnen de functie van de app.
+```js
+function removeChilderen(node) {
+    while (node.firstChild) {
+    node.removeChild(node.lastChild)
+    }
+}
+removeChilderen("Naam html id-element");
+```
+
+Of onderste while statement die je in de functie zet.
+```js
+while (displayFlag.firstChild) {
+    displayFlag.removeChild(displayFlag.lastChild)
+}
+
+while (displayCountryText.firstChild) {
+    displayCountryText.removeChild(displayCountryText.lastChild)
+}
+```
+
+Of met id-html-element.innerHTML op "" leeg zetten in de functie
+```js
+displayFlag.innerHTML = "";
+displayCountryText.innerHTML = "";
+```
+
+

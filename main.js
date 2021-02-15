@@ -3,8 +3,9 @@ const searchButton = document.getElementById("search-button");
 searchButton.addEventListener("click", countryData);
 
 // vraag 7
-// anker element voor info tekstblok en de vlag!!
-const displayCountryText = document.getElementById("display-flag-country");
+// anker element voor info tekstblok (en de vlag!!)
+const displayCountryText = document.getElementById("text-country");
+// console.log("HALLO!!", displayCountryText);
 
 // element voor de vlag
 const displayFlag = document.getElementById("display-flag");
@@ -21,6 +22,13 @@ function handleKeyPress(event) {
     }
 }
 
+// VRAAG 11 functie, de rest staat binnen de country app functie
+function removeChilderen(node) {
+    while (node.firstChild) {
+        node.removeChild(node.lastChild)
+    }
+}
+
 async function countryData() {
 
     // VRAAG 9
@@ -30,24 +38,33 @@ async function countryData() {
     // console.log("USER INPUT", userInput);
 
     // VRAAG 10
-   searchInput.value = ""; // searchInput is de variabele van vraag 8
+    searchInput.value = ""; // searchInput is de variabele van vraag 8
 
     // VRAAG 11
-    // const refreshSearch = document.getElementById("display-flag-country");
-    //     if(refreshSearch) {
-    //         displayCountryText.removeChild("display-flag-country");
-    //     }
+    removeChilderen(displayFlag);
+    removeChilderen(displayCountryText);
 
-    // VRAAG 12
-    // const errorMessage = document.getElementById("error-text");
-    // console.log(errorMessage);
-    // errorMessage.textContent = "";
-    // NOG APPENDEN?
-    // displayCountryText.appendChild(errorMessage);
+    // while (displayFlag.firstChild) {
+    //     displayFlag.removeChild(displayFlag.lastChild)
+    // }
+    //
+    // while (displayCountryText.firstChild) {
+    //     displayCountryText.removeChild(displayCountryText.lastChild)
+    // }
+
+    // displayFlag.innerHTML = "";
+    // displayCountryText.innerHTML = "";
+
+    //VRAAG 12
+    const errorMessage = document.getElementById("error-text");
+    console.log(errorMessage);
+    errorMessage.textContent = "";
+
+    const country = userInput; // globalInputElement
 
     try {
-        const country = userInput; // globalInputElement
-        const responseCountry = await axios.get (
+
+        const responseCountry = await axios.get(
             `https://restcountries.eu/rest/v2/name/${country}?fullText=true`
         );
         // console.log(responseCountry); // geeft de info van het opgevraagde land weer in de console.
@@ -98,10 +115,9 @@ async function countryData() {
         displayCountryText.appendChild(languageElement);
 
 
-    }
-    catch (error) {
+    } catch (error) {
         console.log(error);
-        // errorMessage.textContent = `${country} No hit! Try again in english.`;
+        errorMessage.textContent = `${country} No hit! Try again in english.`;
     }
 }
 // countryData(); => staat bij de globalInputElement
@@ -153,4 +169,5 @@ function languagesCountry(languages) {
     return allLanguages;
 }
 // languagesCountry([{language: "NL"}, {language: "BE"}]);
+
 
